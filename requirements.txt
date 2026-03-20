@@ -1,0 +1,18 @@
+# --- Core Engine ---
+playwright
+pytest
+pytest-playwright
+
+# --- Reporting ---
+allure-pytest
+
+# --- Data Generation & Handling ---
+Faker
+python-dotenv
+pydantic[email]
+# --- Execution & Stability ---
+pytest-xdist         # Chạy song song
+pytest-rerunfailures  # Tự động chạy lại nếu test bị Flaky
+
+# --- Utilities ---
+pydantic            # Để validate dữ liệu DTO chuẩn chỉnh
