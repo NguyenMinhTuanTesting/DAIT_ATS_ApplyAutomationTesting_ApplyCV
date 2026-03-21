@@ -34,22 +34,31 @@ class BasePage:
 
     # --- Dropdown selection (2 OPTIONS) ---
     @allure.step("dropdown: Tìm kiếm và chọn '{option_text}' qua {trigger_selector}")
-    def dropdown_by_search(self, trigger_selector: str, option_text: str):
+    def dropdown_by_search(self, trigger_selector: str, option_text: str,
+                           search_input_selector: str = "//input[@role='searchbox' or @type='search']"):
         """
-        Dùng khi danh sách dài: Click -> Gõ từ khóa vào ô search -> Click chọn.
+        Cải tiến: Thêm tham số search_input_selector để linh hoạt hơn.
+        Mặc định dùng các selector phổ biến của Select2/AntD/Bootstrap.
         """
         self.logger.info(f"dropdown by Search: '{option_text}' via {trigger_selector}")
 
         # 1. Click mở dropdown
         self.click(trigger_selector)
 
-        # 2. Gõ vào ô search chung của dropdown (Đã chuẩn hóa selector)
-        search_input = "//input[@type='search' and @class='dropdown-search__field']"
-        self.page.wait_for_selector(search_input, state="visible")
-        self.page.locator(search_input).press_sequentially(option_text, delay=30)
+        # 2. Đợi ô search hiển thị và nhập liệu với delay để tránh lỗi UI
+        self.page.wait_for_selector(search_input_selector, state="visible", timeout=5000)
+        search_field = self.page.locator(search_input_selector)
 
-        # 3. Chọn item hiển thị
+        # Xóa trắng trước khi gõ (nếu có rác)
+        search_field.click()
+        # Gõ từ khóa với delay 50ms để UI kịp filter
+        search_field.press_sequentially(option_text, delay=50)
+
+        # 3. Đợi kết quả filter hiển thị (Tránh click nhầm item cũ)
         item_xpath = f"//ul[@role='listbox']//li[contains(normalize-space(), '{option_text}')]"
+        self.page.wait_for_selector(item_xpath, state="visible", timeout=5000)
+
+        # 4. Click chọn item
         self.click(item_xpath)
 
     @allure.step("dropdown: Chọn trực tiếp '{option_text}' từ {trigger_selector}")

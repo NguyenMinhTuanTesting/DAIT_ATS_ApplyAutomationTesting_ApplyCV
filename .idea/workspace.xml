@@ -2,28 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d6db1ca-bc38-48ff-9454-583f6452f329" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/CTGroup_applyCV.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/core/base_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/ta_login_data.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/candidate_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dto/ta_login_dto.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locator/apply_cv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locator/ats_list_candidate.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/locator/ats_login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/apply_cv.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/ats/dashboard_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pages/ats/login_page.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pytest.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/test_ats_login.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/helpers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/logger.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/candidate_data.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pages/ats/applycv_page.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_ats_applycv.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conftest.py" beforeDir="false" afterPath="$PROJECT_DIR$/conftest.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/base_page.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/base_page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dto/candidate_dto.py" beforeDir="false" afterPath="$PROJECT_DIR$/dto/candidate_dto.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,7 +44,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
   <component name="RecentsManager">
