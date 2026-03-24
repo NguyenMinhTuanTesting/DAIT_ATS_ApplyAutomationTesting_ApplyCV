@@ -1,0 +1,93 @@
+{
+  "page_1": {
+    "job_apply": [
+      "Bán dẫn", "Công nghệ thông tin", "ESG Gen & Tế bào", "Green Crypto Currency",
+      "Lượng tử", "Máy bay không người lái", "Năng lượng mới",
+      "Phát triển Hạ tầng Giao thông, Kỹ thuật, Kinh tế, Xã hội và Logistic Xanh",
+      "Sản xuất UAV", "Thực phẩm sạch chăm sóc sức khỏe", "Trí tuệ nhân tạo",
+      "Văn phòng Tập đoàn CT", "luật", "Ô tô Điện - Tàu điện", "Đô thị Xanh thông minh"
+    ],
+    "expertise": [
+      "Lập trình", "Thiết kế", "Quản lý dự án", "Phân tích dữ liệu", "Kế toán",
+      "Tiếp thị", "Kinh doanh", "Quản trị văn phòng", "Phát triển web",
+      "Phát triển di động", "Thiết kế đồ họa", "Quản lý sản phẩm", "Tư vấn",
+      "Đào tạo", "Bán hàng", "Dịch vụ khách hàng", "Biên/Phiên dịch",
+      "Khoa học dữ liệu", "Quản lý rủi ro", "Quản lý nhân sự", "Nghiên cứu thị trường",
+      "Kỹ thuật phần mềm", "Quản lý chuỗi cung ứng", "Sản xuất", "Quản lý tài chính",
+      "Phát triển kinh doanh", "Tối ưu hóa quy trình", "Kỹ thuật mạng", "An ninh mạng",
+      "Quản lý chất lượng", "Sáng tạo nội dung", "Quản lý sự kiện",
+      "Thiết kế giao diện người dùng/trải nghiệm người dùng", "Quản lý thương hiệu",
+      "Truyền thông", "Phân tích thị trường", "Tư vấn chiến lược", "Kinh doanh quốc tế",
+      "Quản lý dự án linh hoạt (Agile)", "Kỹ thuật điện", "Kỹ thuật cơ khí",
+      "Thiết kế nội thất", "Nghiên cứu và phát triển", "Kinh tế học", "Chính trị",
+      "Luật", "Tâm lý học", "Ngôn ngữ học", "Khoa học môi trường", "Lịch sử",
+      "Đối ngoại", "Lái xe", "Xây dựng dân dụng và công nghiệp", "UAV", "AI",
+      "Phân tích nghiệp vụ", "Bán dẫn", "Thuế", "Marketing", "Công nghệ phần mềm"
+    ],
+    "rank": [
+      "Chuyên viên (E2)", "Trưởng nhóm", "Phó phòng", "Trưởng phòng",
+      "Phó giám đốc", "Giám đốc", "Phó giám đốc ban", "Giám đốc ban",
+      "Nhân viên", "Chuyên viên (E3)", "Cấp E6", "Cấp E7", "Cấp bậc trưởng E5",
+      "Thực tập sinh", "E4", "E", "C2"
+    ],
+    "job_opening": [
+      "AI Engineer Manager", "BA", "BDM (Trưởng phòng BD)", "BUSINESS ANALYST",
+      "CHUYÊN VIÊN KIỂM THỬ PHẦN MỀM", "CHUYÊN VIÊN ĐỐI NGOẠI",
+      "Chuyên Viên Lập Trình FullStack", "Chuyên Viên Pháp Chế",
+      "Chuyên Viên Pháp Chế Doanh Nghiệp", "Chuyên Viên Tuyển Dụng",
+      "Chuyên viên BA", "Chuyên viên C&B", "Chuyên viên C&B (test)",
+      "Chuyên viên Cung ứng - Đấu thầu", "Chuyên viên Kiểm thử tự động",
+      "Chuyên viên Kế toán tổng hợp", "Chuyên viên Marketing",
+      "Chuyên viên Marketing Thương hiệu", "Chuyên viên Phân tích Dữ liệu",
+      "Chuyên viên Phân tích nghiệp vụ", "Chuyên viên Thiết kế",
+      "Chuyên viên Tuyển dụng (Recruitment Specialist)", "Chuyên viên kiểm soát thuế",
+      "Chuyên viên lập trình", "Chuyên viên lập trình dev",
+      "Chuyên viên lập trình mobile", "Chuyên viên Đối ngoại Quốc tế (test)",
+      "Chuyên viên đào tạo", "Chuyên viên đối ngoại", "Commercial Representative-SS",
+      "DEVELOPER", "Data Engineer Manager", "Finance Director", "GIS/Map Ops Leader",
+      "Giám đốc Kinh doanh", "Giám đốc ban Đối ngoại",
+      "Giám đốc/Phó Giám đốc Ban Tài chính", "KẾ TOÁN TỔNG HỢP", "Kế toán nhà máy",
+      "Kế toán trưởng", "KỸ SƯ KẾT CẤU", "KỸ SƯ PHẦN MỀM",
+      "KỸ SƯ TEST BAY (FLIGHT TEST ENGINEER)", "KỸ SƯ THIẾT KẾ KHUÔN 3D",
+      "KỸ SƯ ĐIỆN", "KỸ THUẬT VIÊN VẬN HÀNH MÁY CNC", "Kỹ sư Thiết kế Chip",
+      "LEADER QC / TRƯỞNG NHÓM KIỂM SOÁT CHẤT LƯỢNG", "Lập trình viên Back-end",
+      "NHÂN VIÊN IPQC", "NHÂN VIÊN OQC", "Nhân Viên Lập Trình FE",
+      "Nhân viên Hành chính Tổng hợp", "Nhân viên IT (DNH support)",
+      "Nhân viên Lái xe", "Nhân viên Pháp chế", "Nhân viên Phát triển Phần mềm (Test)",
+      "Nhân viên Tuyển dụng", "Nhân viên lập trình cao cấp (Test)",
+      "Nhân viên lập trình full-stack", "Nhân viên văn phòng (test)",
+      "Nhân viên vận hành ứng dụng", "Phó Tổng Giám đốc", "Principal QA/QC",
+      "Quản lý Pháp lý IPO", "Quản lý Sales", "Quản lý dự án (dnh test)",
+      "Representative-Domestic Sales", "Sales", "Sales Manager",
+      "Senior Automation QA", "Senior Dev", "Senior DevOps", "Senior QA/QC",
+      "DNH TEST", "Solution Specialist", "TESTER", "TRƯỞNG PHÒNG BẢO TRÌ",
+      "TRỢ LÝ KIÊM PHIÊN DỊCH TIẾNG TRUNG-ANH-VIỆT", "Thư ký Ban CNTT",
+      "Thư ký Dự án", "Thư ký ban Công nghệ thông tin", "Thư ký ban DAIT",
+      "Trưởng Phòng Tổng Vụ", "Trưởng phòng AI Engineer", "Trưởng phòng Marcom",
+      "Trưởng phòng Phát triển Kinh doanh", "Trợ Lý Giám Đốc Tiếng Trung",
+      "Trợ lý Giám đốc F&B", "Tuyển dụng", "Tài xế", "UI/UX Designer",
+      "[Test] Automation Tester", "devops", "aklnlkdv", "dnh cancel", "test tuyển dụng"
+    ],
+    "personal_info": {
+      "nationality": ["Việt Nam"],
+      "place_of_birth": ["Thành phố Hồ Chí Minh", "Hà Nội", "Đà Nẵng", "Cần Thơ", "An Giang", "Bình Dương", "Đồng Nai"],
+      "ethnicity": ["Kinh", "Tày", "Thái", "Mường", "Khơ Me", "H'Mông", "Nùng", "Hoa", "Dao", "Xơ Đăng"],
+      "religion": ["Không", "Phật giáo", "Công giáo", "Tin lành", "Cao Đài", "Hòa Hảo"],
+      "issued_place": ["Cục Cảnh sát Quản lý hành chính về trật tự xã hội", "Thành phố Hồ Chí Minh", "Hà Nội"]
+    },
+    "location_map": {
+      "Thành phố Cần Thơ": ["Phường Thốt Nốt", "Phường Thuận Hưng"],
+      "Thành phố Hồ Chí Minh": ["Phường Phú Nhuận", "Phường Cầu Kiệu", "Phường Tân Hòa"]
+    },
+    "other_social": ["Twitter", "Instagram", "Tiktok", "Reddit", "WhatsApp", "Khác"],
+    "marital_status": ["Độc thân", "Đã kết hôn", "Ly hôn", "Góa (vợ/chồng)"]
+  },
+  "page_2": {
+    "other_relationship": ["Vợ/Chồng", "Con", "Anh/Chị/Em", "Khác"],
+    "degree": ["Tiến sĩ", "Thạc sĩ", "Cử nhân (Đại học)"],
+    "language": ["Hàn Quốc", "Tiếng Anh", "Đức"],
+    "skill_options": ["Bản xứ", "Thành thạo", "Cao cấp", "Trung cấp", "Sơ cấp", "Cơ bản"],
+    "master_skill_dropdown": ["Cơ bản", "Trung cấp", "Cao cấp"],
+    "grade": ["Xuất sắc", "Giỏi", "Khá", "Trung bình", "Không xếp loại"]
+  }
+}

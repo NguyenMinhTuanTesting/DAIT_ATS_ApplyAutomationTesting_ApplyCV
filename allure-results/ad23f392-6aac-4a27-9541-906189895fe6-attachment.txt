@@ -1,0 +1,1 @@
+[31m[1mERROR   [0m ApplyCVPage:base_page.py:32 Typing verification failed for //input[@id='dob']. Expected: 1984-01-07

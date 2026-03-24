@@ -2,7 +2,7 @@ import os
 import allure
 from dotenv import load_dotenv
 
-from pages.ats.login_page import ATSLoginPage
+from pages.login_page import ATSLoginPage
 from data.ta_login_data import VALID_TA_LOGIN, INVALID_TA_LOGIN
 
 load_dotenv()
