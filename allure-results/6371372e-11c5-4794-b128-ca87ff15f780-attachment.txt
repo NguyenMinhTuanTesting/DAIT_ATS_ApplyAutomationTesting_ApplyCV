@@ -1,3 +1,0 @@
-Dữ liệu kiểm tra: Email
-[-] Giá trị mong đợi (Expected): john88@yahoo.com
-[+] Giá trị tìm thấy (Actual)  : john88@yahoo.com

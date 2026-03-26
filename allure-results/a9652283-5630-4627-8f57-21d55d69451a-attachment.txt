@@ -1,3 +1,0 @@
-Dữ liệu kiểm tra: Trường học
-[-] Giá trị mong đợi (Expected): Đại học Thành phố JaneQuận
-[+] Giá trị tìm thấy (Actual)  : Đại học Thành phố JaneQuận

@@ -1,3 +1,0 @@
-Dữ liệu kiểm tra: Họ và Tên
-[-] Giá trị mong đợi (Expected): NHẬT BÙI
-[+] Giá trị tìm thấy (Actual)  : NHẬT BÙI
