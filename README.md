@@ -1,34 +1,33 @@
-🚀 CTGroup Automation Testing - Recruitment E2E Flow
-Dự án Automation Test toàn trình cho luồng tuyển dụng tập đoàn CT Group. Hệ thống tự động hóa từ bước Ứng viên nộp hồ sơ đến bước Chuyên viên tuyển dụng (TA) verify trên hệ thống ATS.
+# 🚀 CTGroup Automation Testing - Recruitment E2E Flow
 
-🛠 1. Cài đặt Allure Report (Dành cho người mới)
-Allure là công cụ xuất báo cáo chuyên nghiệp. Nếu máy bạn chưa có, hãy làm theo các bước sau:
+Dự án Automation Test toàn trình (End-to-End) cho luồng tuyển dụng tập đoàn CT Group. Hệ thống tự động hóa từ bước **Ứng viên nộp hồ sơ** đến bước **Chuyên viên tuyển dụng (TA) verify trên hệ thống ATS**.
 
-Tải về: Truy cập Allure Framework Releases. Tìm đến bản mới nhất, tải file allure-2.xx.x.zip.
+---
 
-Giải nén: Giải nén file vừa tải vào một thư mục cố định (Ví dụ: C:\allure).
+## 🛠 1. Cài đặt Allure Report (Dành cho người mới)
 
-Cấu hình biến môi trường (Windows Path):
+Allure là công cụ xuất báo cáo chuyên nghiệp. Nếu máy bạn chưa có, hãy làm đúng trình tự sau:
 
-Nhấn phím Windows, gõ "env" -> Chọn Edit the system environment variables.
+1.  **Tải về:** Truy cập [Allure Framework Releases](https://github.com/allure-framework/allure2/releases). Tìm đến bản mới nhất, tải file **`allure-2.xx.x.zip`**.
+2.  **Giải nén:** Giải nén file vừa tải vào một thư mục cố định (Ví dụ: `C:\allure`).
+3.  **Cấu hình biến môi trường (Windows Path):**
+    * Nhấn phím **Windows**, gõ **"env"** -> Chọn **Edit the system environment variables**.
+    * Chọn **Environment Variables** -> Ở ô **System variables** (phía dưới), tìm dòng **Path** -> Nhấn **Edit**.
+    * Nhấn **New** -> Dán đường dẫn đến thư mục **bin** của Allure (Ví dụ: `C:\allure\bin`).
+    * Nhấn **OK** liên tiếp 3 lần.
+4.  **QUAN TRỌNG:** Tắt hẳn **VS Code** và tất cả các cửa sổ **Terminal/CMD** đang mở, sau đó mở lại để máy nhận diện lệnh `allure`.
 
-Chọn Environment Variables -> Ở ô System variables (phía dưới), tìm dòng Path -> Nhấn Edit.
+---
 
-Nhấn New -> Dán đường dẫn đến thư mục bin của Allure (Ví dụ: C:\allure\bin).
+## 📥 2. Cài đặt Dự án (Setup từ đầu)
 
-Nhấn OK liên tiếp 3 lần.
-
-QUAN TRỌNG: Tắt hẳn VS Code và tất cả các cửa sổ Terminal/CMD đang mở, sau đó mở lại để máy nhận diện lệnh allure.
-
-📥 2. Cài đặt Dự án (Setup từ đầu)
-Bước 1: Clone dự án về máy
+### Bước 1: Clone dự án về máy
 Mở Terminal/PowerShell và gõ lệnh sau:
 
-Bash
-git clone https://github.com/username/DAIT_ATS_ApplyAutomationTesting_ApplyCV.git
+git clone [https://github.com/username/DAIT_ATS_ApplyAutomationTesting_ApplyCV.git](https://github.com/username/DAIT_ATS_ApplyAutomationTesting_ApplyCV.git)
 cd DAIT_ATS_ApplyAutomationTesting_ApplyCV
 Bước 2: Khởi tạo và Kích hoạt Môi trường ảo (Virtual Env)
-Trên Windows:
+Trên Windows (PowerShell):
 
 PowerShell
 python -m venv .venv
@@ -55,12 +54,12 @@ Tạo file tên là .env tại thư mục gốc của dự án. Copy nội dung 
 
 Đoạn mã
 # --- Môi trường (URLs) ---
-URL_APPLY_CV="https://hr-dev.ctgroupvietnam.com/apply-job"
-URL_ATS_LOGIN="https://hr-dev.ctgroupvietnam.com/web/login"
-URL_MENU="https://hr-dev.ctgroupvietnam.com"
+URL_APPLY_CV="[https://hr-dev.ctgroupvietnam.com/apply-job](https://hr-dev.ctgroupvietnam.com/apply-job)"
+URL_ATS_LOGIN="[https://hr-dev.ctgroupvietnam.com/web/login](https://hr-dev.ctgroupvietnam.com/web/login)"
+URL_MENU="[https://hr-dev.ctgroupvietnam.com](https://hr-dev.ctgroupvietnam.com)"
 
 # --- Tài khoản TA (Hệ thống nội bộ - Thay bằng tài khoản của bạn) ---
-TA_EMAIL="tuan.nguyen.e3@ctmcorp.com.vn"
+TA_EMAIL="your_email@ctmcorp.com.vn"
 TA_PASSWORD="your_password_here"
 
 # --- Cấu hình Browser ---
@@ -68,8 +67,8 @@ HEADLESS=False
 SLOW_MO=50
 BROWSER_TIMEOUT=30000
 
-# --- QUAN TRỌNG: Cấu hình Đường dẫn Dữ liệu ---
-# Sử dụng đường dẫn tuyệt đối trên máy bạn (Dùng dấu gạch chéo xuôi /)
+# --- QUAN TRỌNG: Cấu hình Đường dẫn Dữ liệu (Dùng đường dẫn tuyệt đối) ---
+# Lưu ý: Thay đổi đường dẫn cho đúng với vị trí folder trên máy bạn
 AVT_FOLDER="D:/Project/data/candidate/images"
 CV_FOLDER="D:/Project/data/candidate/files_cv"
 DOC_FOLDER="D:/Project/data/candidate/others"
@@ -85,7 +84,8 @@ Cách 1: Xem qua Allure Report (Đầy đủ log & ảnh chụp màn hình)
 PowerShell
 allure serve allure-results
 Cách 2: Xem qua HTML Report (Nhanh gọn)
-Mở trực tiếp file: reports/report.html bằng trình duyệt web.
+Mở trực tiếp file sau bằng trình duyệt web:
+reports/report.html
 
 📁 6. Cấu trúc thư mục (Project Structure)
 core/: Chứa BasePage và các hàm tương tác dùng chung.
@@ -99,5 +99,3 @@ dto/: Data Transfer Object (Đóng gói dữ liệu bằng Pydantic).
 data/: Chứa file JSON mẫu và bộ sinh dữ liệu ngẫu nhiên.
 
 tests/: Các kịch bản kiểm thử E2E.
-
-Lưu ý: Nếu lệnh allure báo lỗi "not recognized", hãy kiểm tra lại cấu hình Path ở Bước 1 và đảm bảo đã khởi động lại VS Code.
