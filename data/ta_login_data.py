@@ -10,6 +10,6 @@ VALID_TA_LOGIN = TALoginDTO(
 )
 
 INVALID_TA_LOGIN = TALoginDTO(
-    email=os.getenv("TA_EMAIL") or "",
-    password=os.getenv("TA_PASSWORD") or ""
+    email="wrong@gmail.com",
+    password="lêu lêu"
 )
