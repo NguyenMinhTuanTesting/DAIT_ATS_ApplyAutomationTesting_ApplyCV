@@ -24,8 +24,8 @@ Allure là công cụ xuất báo cáo chuyên nghiệp. Nếu máy bạn chưa 
 ### Bước 1: Clone dự án về máy
 Mở Terminal/PowerShell và gõ lệnh sau:
 
-```bash
-git clone [https://github.com/username/DAIT_ATS_ApplyAutomationTesting_ApplyCV.git](https://github.com/username/DAIT_ATS_ApplyAutomationTesting_ApplyCV.git)
+
+git clone https://github.com/NguyenMinhTuanTesting/DAIT_ATS_ApplyAutomationTesting_ApplyCV.git
 cd DAIT_ATS_ApplyAutomationTesting_ApplyCV
 Bước 2: Khởi tạo và Kích hoạt Môi trường ảo (Virtual Env)
 Trên Windows (PowerShell):
