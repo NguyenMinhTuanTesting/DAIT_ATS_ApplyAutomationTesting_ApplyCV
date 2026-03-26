@@ -12,4 +12,3 @@ class ats_detail_candidate:
     CANDIDATE_ATTACHED_IMAGE="//img[@class='img img-fluid my-0 mx-auto rounded']" #lấy tên file từ thuộc tính alt
     CANDIDATE_ATTACHED_FILE ="//div[@aria-label='Preview']/.." #lấy tên file từ thuộc tính title
 
-

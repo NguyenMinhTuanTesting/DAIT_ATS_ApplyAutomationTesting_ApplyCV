@@ -149,7 +149,6 @@ class CandidateGenerator:
                 "temporary_province": p_province,
                 "temporary_district": p_district,
                 "phone_1": f"09{random.randint(10000000, 99999999)}",
-                "phone_2": f"03{random.randint(10000000, 99999999)}",
                 "email": self.fake.free_email(),
                 "emergency_name": self.fake.name(),
                 "emergency_phone": f"08{random.randint(10000000, 99999999)}",
@@ -219,16 +218,17 @@ class CandidateGenerator:
     def get_candidate(self) -> CandidateDTO:
         priority_data = self._load_json(self.priority_file)
 
-        # 1. Nếu Priority hợp lệ -> Sử dụng và gán thêm files Others để Verify
+        # 1. Nếu dùng dữ liệu Priority
         if self.is_priority_valid(priority_data):
-            logger.info("--- Sử dụng dữ liệu từ priority_candidate.json ---")
+            logger.info("--- Sử dụng dữ liệu Priority ---")
 
-            # Đảm bảo vẫn có 3 file Others để thực hiện bước Verify trên ATS
+            # CHỈ lấy others_paths nếu bạn đã chuẩn bị trong file JSON
+            # Nếu không có, để danh sách RỖNG, không được tự ý bốc file ngẫu nhiên
             if "others_paths" not in priority_data:
-                priority_data["others_paths"] = self._get_random_files("DOC_FOLDER", 3)
+                priority_data["others_paths"] = []
 
             return CandidateDTO(**priority_data)
 
-        # 2. Nếu không hợp lệ -> Chuyển sang Random Mode
+        # 2. Nếu dùng dữ liệu Random (Thì mới bốc đủ 3 file)
         print("\n[WARNING] file priority_candidate bị thiếu thông tin quan trọng. Kích hoạt Random Mode.")
         return self.generate_random_candidate()

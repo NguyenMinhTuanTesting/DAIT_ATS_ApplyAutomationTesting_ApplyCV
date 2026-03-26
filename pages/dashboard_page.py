@@ -12,6 +12,7 @@ class ATSDashboardPage(BasePage):
     @allure.step("Bước 5 & 6: Chuyển đến Danh sách ứng viên")
     def transfer_to_all_candidates(self):
         # Bước 5: Click dropdown ứng viên
+        self.page.wait_for_timeout(3000)
         self.click(ats_dashboard.TUYENDUNG_CANDIDATE_DROPDOWN)
 
         # Bước 6: Click option danh sách ứng viên

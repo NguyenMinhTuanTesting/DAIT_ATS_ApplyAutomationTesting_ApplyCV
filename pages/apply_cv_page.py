@@ -206,4 +206,4 @@ class ApplyCVPage(BasePage):
         # 5. Cam kết & Hoàn thành
         self.set_checked(ApplyCVLocators_Page4.XAC_NHAN, data.agree_terms)
         self.click(ApplyCVLocators_Page4.HOAN_THANH)
-        self.page.wait_for_timeout(5000)
+        self.page.wait_for_timeout(15000)

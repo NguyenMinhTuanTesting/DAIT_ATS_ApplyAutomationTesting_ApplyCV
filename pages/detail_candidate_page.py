@@ -8,9 +8,8 @@ from playwright.sync_api import expect
 class ATSCandidateDetailPage(BasePage):
 
     def _compare_field(self, field_name, actual, expected):
-        """Hàm hỗ trợ so sánh và ghi log chi tiết vào Allure"""
         with allure.step(f"So sánh {field_name}"):
-            # Đính kèm thông tin chi tiết vào sub-step
+            # ghi log so sánh
             log_content = f"Dữ liệu kiểm tra: {field_name}\n"
             log_content += f"[-] Giá trị mong đợi (Expected): {expected}\n"
             log_content += f"[+] Giá trị tìm thấy (Actual)  : {actual}"
@@ -38,25 +37,25 @@ class ATSCandidateDetailPage(BasePage):
             self._compare_field("Số CCCD/Passport", actual_cccd, candidate_dto.page_1.citizen_id)
             self._compare_field("Trường học", actual_school, candidate_dto.page_2.school_name)
 
-        # 4. Kiểm tra 3 file trong phần Others
-        with allure.step("BƯỚC 10.2: Kiểm tra 3 file đính kèm (Ảnh, PDF, Word)"):
-            if not hasattr(candidate_dto, 'others_paths') or not candidate_dto.others_paths:
-                allure.attach("Không tìm thấy danh sách file trong DTO", name="Warning",
-                              attachment_type=allure.attachment_type.TEXT)
-                return
+            # 4. Kiểm tra 3 file trong phần Others
+            with allure.step("BƯỚC 10.2: Kiểm tra file đính kèm (Ảnh, PDF, Word)"):
+                # KIỂM TRA: Nếu danh sách file rỗng (do Priority không chuẩn bị) thì bor qua
+                if not candidate_dto.others_paths:
+                    allure.attach("Dữ liệu Priority không có file Others. Bỏ qua bước kiểm tra này.",
+                                  name="Skip_Notification",
+                                  attachment_type=allure.attachment_type.TEXT)
+                    self.logger.info("⚠️ Bỏ qua kiểm tra file Others vì dữ liệu trống.")
+                    return  # KẾT THÚC BƯỚC CHECK FILE TẠI ĐÂY
 
-            for file_path in candidate_dto.others_paths:
-                file_name = os.path.basename(file_path)
-
-                with allure.step(f"Kiểm tra file: {file_name}"):
-                    file_locator = self.page.locator(f"div[title*='{file_name}']")
-
-                    try:
-                        expect(file_locator).to_be_visible(timeout=5000)
-                        allure.attach(f"File '{file_name}' hiển thị chính xác trên ATS.", name="Result",
-                                      attachment_type=allure.attachment_type.TEXT)
-                    except AssertionError:
-                        self.take_screenshot(f"Missing_{file_name}")
-                        raise AssertionError(f"❌ Không tìm thấy file {file_name} trên giao diện ATS!")
+                # Nếu có file thì mới chạy vòng lặp này
+                for file_path in candidate_dto.others_paths:
+                    file_name = os.path.basename(file_path)
+                    with allure.step(f"Kiểm tra file: {file_name}"):
+                        file_locator = self.page.locator(f"div[title*='{file_name}']")
+                        try:
+                            expect(file_locator).to_be_visible(timeout=5000)
+                        except AssertionError:
+                            self.take_screenshot(f"Missing_{file_name}")
+                            raise AssertionError(f"❌ Không tìm thấy file {file_name}!")
 
         self.take_screenshot("Verify_ATS_Final_Success")

@@ -1,3 +1,0 @@
-Dữ liệu kiểm tra: Họ và Tên
-[-] Giá trị mong đợi (Expected): MINH PHẠM
-[+] Giá trị tìm thấy (Actual)  : MINH PHẠM

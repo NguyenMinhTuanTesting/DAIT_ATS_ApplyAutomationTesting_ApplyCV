@@ -66,11 +66,11 @@ def test_apply_cv_and_verify_ats(browser, browser_context_args):
         dashboard.transfer_to_recruitment()
         dashboard.transfer_to_all_candidates()
 
-        # 3. List: Bước 7, 8, 9 (Search và Click ứng viên)
+        # 3. List: search và click vào ứng viên
         list_page = ATSListCandidatePage(ta_page)
         list_page.search_and_open_candidate(candidate.page_1.full_name)
 
-        # 4. Detail: Bước 10 (Verify dữ liệu)
+        # 4. Detail: verifiy dữ liệu
         detail_page = ATSCandidateDetailPage(ta_page)
         detail_page.verify_candidate_e2e(candidate)
 
