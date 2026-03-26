@@ -2,7 +2,7 @@
 playwright
 pytest
 pytest-playwright
-
+pytest-html
 # --- Reporting ---
 allure-pytest
 

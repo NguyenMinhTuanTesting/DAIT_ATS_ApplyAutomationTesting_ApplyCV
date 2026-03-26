@@ -1,1 +1,0 @@
-[1m[31mERROR   [0m ApplyCVPage:base_page.py:32 Typing verification failed for //input[@id='issued_date']. Expected: 2021-05-15

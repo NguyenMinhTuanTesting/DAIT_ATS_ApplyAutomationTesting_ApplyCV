@@ -1,15 +1,20 @@
 import pytest
-from playwright.sync_api import sync_playwright
+import os
+from dotenv import load_dotenv
 
-@pytest.fixture
-def page():
-    with sync_playwright() as p:
-        browser = p.chromium.launch(
-            headless=False,
-            args=["--start-maximized"]
-        )
-        context = browser.new_context(no_viewport=True)
-        page = context.new_page()
-        yield page
-        # context.close()
-        # browser.close()
+load_dotenv()
+
+@pytest.fixture(scope="session")
+def browser_type_launch_args(browser_type_launch_args):
+    return {
+        **browser_type_launch_args,
+        "headless": os.getenv("HEADLESS", "false").lower() == "true",
+        "args": ["--start-maximized"]
+    }
+
+@pytest.fixture(scope="session")
+def browser_context_args(browser_context_args):
+    return {
+        **browser_context_args,
+        "no_viewport": True
+    }

@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ats_login:
-    search_bar ="//input[@role='searchbox']"
-    candicate_name ="//td[@name='partner_name']"
+class ats_list_candidate:
+    SEARCH_BAR ="//input[@role='searchbox']" #Clear trước khi search
+    CANDIDATE_NAME ="//td[@name='partner_name']" #
+    LIST_MODE="//button[@data-tooltip='Danh sách']"

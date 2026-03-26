@@ -4,7 +4,7 @@
       "Bán dẫn", "Công nghệ thông tin", "ESG Gen & Tế bào", "Green Crypto Currency",
       "Lượng tử", "Máy bay không người lái", "Năng lượng mới",
       "Phát triển Hạ tầng Giao thông, Kỹ thuật, Kinh tế, Xã hội và Logistic Xanh",
-      "Sản xuất UAV", "Thực phẩm sạch chăm sóc sức khỏe", "Trí tuệ nhân tạo",
+      "Sản xuất UAV", "Thực phẩm sạch, chăm sóc sức khỏe", "Trí tuệ nhân tạo",
       "Văn phòng Tập đoàn CT", "luật", "Ô tô Điện - Tàu điện", "Đô thị Xanh thông minh"
     ],
     "expertise": [
@@ -70,8 +70,8 @@
     ],
     "personal_info": {
       "nationality": ["Việt Nam"],
-      "place_of_birth": ["Thành phố Hồ Chí Minh", "Hà Nội", "Đà Nẵng", "Cần Thơ", "An Giang", "Bình Dương", "Đồng Nai"],
-      "ethnicity": ["Kinh", "Tày", "Thái", "Mường", "Khơ Me", "H'Mông", "Nùng", "Hoa", "Dao", "Xơ Đăng"],
+      "place_of_birth": ["Thành phố Hồ Chí Minh", "Hà Nội", "Đà Nẵng", "Cần Thơ", "An Giang", "Đồng Nai"],
+      "ethnicity": ["Kinh", "Tày", "Thái", "Mường", "Khmer", "H'Mông", "Nùng", "Hoa", "Dao", "Xơ Đăng"],
       "religion": ["Không", "Phật giáo", "Công giáo", "Tin lành", "Cao Đài", "Hòa Hảo"],
       "issued_place": ["Cục Cảnh sát Quản lý hành chính về trật tự xã hội", "Thành phố Hồ Chí Minh", "Hà Nội"]
     },
@@ -80,7 +80,7 @@
       "Thành phố Hồ Chí Minh": ["Phường Phú Nhuận", "Phường Cầu Kiệu", "Phường Tân Hòa"]
     },
     "other_social": ["Twitter", "Instagram", "Tiktok", "Reddit", "WhatsApp", "Khác"],
-    "marital_status": ["Độc thân", "Đã kết hôn", "Ly hôn", "Góa (vợ/chồng)"]
+    "marital_status": ["Độc thân", "Có Gia Đình", "Ly hôn", "Góa (vợ/chồng)"]
   },
   "page_2": {
     "other_relationship": ["Vợ/Chồng", "Con", "Anh/Chị/Em", "Khác"],

@@ -1,0 +1,3 @@
+Dữ liệu kiểm tra: Số CCCD/Passport
+[-] Giá trị mong đợi (Expected): 073771463263
+[+] Giá trị tìm thấy (Actual)  : 073771463263

@@ -1,4 +1,6 @@
 import logging
+import os
+
 import allure
 from playwright.sync_api import Page, expect
 from typing import Optional
@@ -19,16 +21,21 @@ class BasePage:
         expect(locator).to_have_value(value, timeout=3000)
 
     @allure.step("Dropdown search: chọn '{option_text}' qua {trigger_selector}")
-    def dropdown_by_search(self, trigger_selector: str, option_text: str, search_input_selector: str = "//input[@role='searchbox' or @type='search']"):
+    def dropdown_by_search(self, trigger_selector: str, option_text: str,
+                           search_input_selector: str = "//input[@role='searchbox' or @type='search']"):
         self.logger.info(f"Dropdown search: '{option_text}' via {trigger_selector}")
         self.click(trigger_selector)
-        search_field = self.page.locator(search_input_selector)
+        search_field = self.page.locator(search_input_selector).last
         search_field.wait_for(state="visible", timeout=5000)
-        search_field.fill("")
-        search_field.press_sequentially(option_text, delay=50)
-        item = self.page.locator("ul[role='listbox'] li").get_by_text(option_text, exact=False).first
-        item.wait_for(state="visible", timeout=5000)
-        item.click(force=True)
+        search_field.fill(option_text)
+        self.page.wait_for_timeout(500)
+        item = self.page.locator("ul[role='listbox'] li").filter(has_text=option_text).first
+
+        try:
+            item.wait_for(state="visible", timeout=5000)
+            item.click()
+        except Exception:
+            item.click(force=True)
 
     @allure.step("Dropdown text: chọn '{option_text}' qua {trigger_selector}")
     def dropdown_by_text(self, trigger_selector: str, option_text: str):
@@ -50,8 +57,34 @@ class BasePage:
 
     @allure.step("Upload file: {selector}")
     def upload_file(self, selector: str, file_path: str):
-        self.logger.info(f"Uploading {file_path}")
-        self.page.set_input_files(selector, file_path)
+        if not file_path:
+            self.logger.error("Đường dẫn file bị rỗng!")
+            return
+
+        # Chuẩn hóa đường dẫn tuyệt đối
+        absolute_path = os.path.abspath(os.path.normpath(file_path))
+
+        if not os.path.exists(absolute_path):
+            self.logger.error(f"❌ File không tồn tại: {absolute_path}")
+            return
+
+        self.logger.info(f"✅ Đang upload: {absolute_path}")
+
+        # Tìm locator mục tiêu
+        target = self.page.locator(selector)
+
+        # KIỂM TRA: Nếu selector không phải thẻ INPUT, tìm thẻ INPUT ẩn bên trong hoặc lân cận
+        is_input = target.evaluate("node => node.tagName === 'INPUT'")
+
+        if not is_input:
+            # Tìm thẻ input[type='file'] là con hoặc là anh em gần nhất
+            final_locator = self.page.locator(f"{selector} >> xpath=..//input[@type='file']").first
+        else:
+            final_locator = target
+
+        # Thực hiện upload và đợi một chút để website xử lý ảnh
+        final_locator.set_input_files(absolute_path)
+        self.page.wait_for_timeout(2000)
 
     @allure.step("Set checked: {checked} cho {selector}")
     def set_checked(self, selector: str, checked: bool = True):

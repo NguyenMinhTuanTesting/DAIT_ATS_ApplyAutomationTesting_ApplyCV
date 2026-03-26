@@ -167,26 +167,43 @@ class ApplyCVPage(BasePage):
         # 1. Thông tin khác
         self.click(ApplyCVLocators_Page4.KHAC_TANG_CA_KHONG)
         self.click(ApplyCVLocators_Page4.KHAC_CONG_TAC_KHONG)
-
         self.type_and_verify(ApplyCVLocators_Page4.KHAC_DAM_ME, data.passionate)
         self.type_and_verify(ApplyCVLocators_Page4.KHAC_THE_HIEN_DAM_ME, data.passionate_description)
 
-        # 2. Nhận việc
+        # 2. Nhận việc & Thu nhập
         self.fill_date(ApplyCVLocators_Page4.NHAN_VIEC_SOM_NHAT, data.earliest_start_date)
         self.fill_date(ApplyCVLocators_Page4.NHAN_VIEC_MUON_NHAT, data.latest_start_date)
         self.fill_date(ApplyCVLocators_Page4.NHAN_VIEC_MONG_MUON, data.expected_start_date)
 
-        # 3. Thu nhập & Ngân hàng
         self.type_currency(ApplyCVLocators_Page4.THU_NHAP_THAP_NHAT, data.min_expected_salary)
         self.type_currency(ApplyCVLocators_Page4.THU_NHAP_CAO_NHAT, data.max_expected_salary)
 
+        # 3. Ngân hàng
         self.type_and_verify(ApplyCVLocators_Page4.TK_NGAN_HANG_SO, data.bank_number)
-        self.dropdown_by_search(ApplyCVLocators_Page4.TK_NGAN_HANG_TEN,data.bank_name)
-        self.type_and_verify(ApplyCVLocators_Page4.TK_NGAN_HANG_CHI_NHANH,data.bank_branch)
+        self.dropdown_by_search(ApplyCVLocators_Page4.TK_NGAN_HANG_TEN, data.bank_name)
+        self.type_and_verify(ApplyCVLocators_Page4.TK_NGAN_HANG_CHI_NHANH, data.bank_branch)
         self.type_and_verify(ApplyCVLocators_Page4.TK_NGAN_HANG_CHU_TK, data.bank_owner_name)
 
-        # 4. Cam kết & Hoàn thành
-        self.set_checked(ApplyCVLocators_Page4.XAC_NHAN, data.agree_terms)
+        # 4. UPLOAD TÀI LIỆU
+        # Bước A: Upload CV chính
+        if data.cv_file_path:
+            self.upload_file(ApplyCVLocators_Page4.NHAP_TAI_LIEU, data.cv_file_path)
+            self.logger.info("Đã upload CV, chờ 3 giây trước khi upload documents...")
+            self.page.wait_for_timeout(3000)
 
-        # Click HOÀN THÀNH (Bước cuối cùng)
+        # Bước B: Upload 3 file others ngẫu nhiên (mỗi file cách nhau 5s)
+        if data.document_paths:
+            for i, doc_path in enumerate(data.document_paths):
+                self.logger.info(f"Đang import document {i + 1}: {doc_path}")
+                # Lưu ý: Hàm này sẽ append file nếu web hỗ trợ, hoặc set lại danh sách file
+                self.upload_file(ApplyCVLocators_Page4.NHAP_TAI_LIEU, doc_path)
+
+                # Không đợi ở file cuối cùng để tối ưu
+                if i < len(data.document_paths) - 1:
+                    self.logger.info("Đợi 5 giây cho file tiếp theo...")
+                    self.page.wait_for_timeout(5000)
+
+        # 5. Cam kết & Hoàn thành
+        self.set_checked(ApplyCVLocators_Page4.XAC_NHAN, data.agree_terms)
         self.click(ApplyCVLocators_Page4.HOAN_THANH)
+        self.page.wait_for_timeout(5000)
